@@ -1,39 +1,52 @@
+import React, {useState} from "react";
 
-const teamMembers {
+
+function Form (props) => {
+const [teamMembers, setTeamMembers] = useState(true);
+const teamMember = {
 
     const teamMember1 = {
-    name: Magi,
-    email: Magi@gmail.com,
-    role:  full stack dev
-    }
+    name: 'Magi',
+    email: 'Magi@gmail.com',
+    role:  'full stack dev'
+    },
 
     const teamMember2 = {
-    name: Bryan,
-    email: bryan@gmail.com,
-    role: Back End Dev,
-    }
+    name: 'Bryan',
+    email: 'bryan@gmail.com',
+    role: 'Back End Dev',
+    },
 
     const teamMember3 = {
-    name: Andrea,
-    email: andrea@gmail.com,
-    role: Front End Dev,
-    }
+    name: 'Andrea',
+    email: 'andrea@gmail.com',
+    role: 'Front End Dev',
+    },
 
     const teamMember4 = {
-    name: Danette,
-    email: danette@yahoo.com,
-    role: Computer Science,
-    }
+    name: 'Danette',
+    email: 'danette@yahoo.com',
+    role: 'Computer Science',
+    },
 
     const teamMember5 = {
-    name: Denise,
-    email: denise@yahoo.com,
-    role: Full Stack Dev,
-    }
+    name: 'Denise',
+    email: 'denise@yahoo.com',
+    role: 'Full Stack Dev',
+    },
 
     const teamMember6 = {
-    name: Rick,
-    email: Rick@juon.com,
-    role: Full Stack Dev,
+    name: 'Rick',
+    email: 'Rick@juon.com',
+    role: 'Full Stack Dev',
     }
 }
+return (
+ teamMember.map((props) => {
+    setTeamMembers(teamMember);
+ })
+
+)
+
+}
+ export default Form;

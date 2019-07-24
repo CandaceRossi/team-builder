@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
-import logo from "./logo.svg";
 import "./App.css";
+import TeamMemberCard from "./TeamMemberCard";
+import MemberToEdit from "./MemberToEdit";
 
 function App() {
-  const [feedback, setFeedback] = useState({
-    email: "",
-    name: "",
-    role: ""
-  });
+
+ const memberToEdit = event => {
+    setInputValue(event.target.value);
+}
   return (
     <div>
       <form>
         <input />
+        <input />
+        <input />
       </form>
+      <MemberToEdit type="text" onChange={} />
     </div>
   );
 }
