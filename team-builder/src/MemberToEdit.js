@@ -1,17 +1,30 @@
 import React from "react";
-import { returnStatement } from "@babel/types";
+import {Form} from './Form'
 
 
 function memberToEdit(props) => {
+    const handleSubmit = event => {
+        event.preventDefault();
+    }
 return(
-    <button onCLick=((props) => {
-        if(props.teamMember === true {
-            return {teamMember}
-        })
+    <div>
+    <form onSubmit={event => handleSubmit(event)}> 
+    <label>
+        Name:
+        <input type="text" onChange={event => handleChange(event)}/>
+    </label>
+    <label>
+        Email:
+        <input type="text" onChange={event => handleChange(event)}/>
+    </label>
+    <label>
+        Role:
+        <input type="text" onChange={event => handleChange(event)}/>
+    </label>
+    <button>Edit</button>
+    </form>
+    </div>
+    );
+    }
 
-    })
-)
-
-}
-
-export default memberToEdit;
+export default MemberToEdit;

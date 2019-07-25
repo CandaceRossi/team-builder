@@ -1,10 +1,7 @@
-import React, {useState} from "react";
+import React from "react";
 
-
-function Form (props) => {
-const [teamMembers, setTeamMembers] = useState(true);
-const teamMember = {
-
+export default function teamMember(props) => {
+ return(
     const teamMember1 = {
     name: 'Magi',
     email: 'Magi@gmail.com',
@@ -40,13 +37,6 @@ const teamMember = {
     email: 'Rick@juon.com',
     role: 'Full Stack Dev',
     }
+ )
 }
-return (
- teamMember.map((props) => {
-    setTeamMembers(teamMember);
- })
 
-)
-
-}
- export default Form;

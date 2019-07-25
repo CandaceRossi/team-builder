@@ -1,22 +1,25 @@
-import React from "react";
-import { Route } from "react-router-dom";
+import React, {useState} from "react";
 import "./App.css";
 import TeamMemberCard from "./TeamMemberCard";
-import MemberToEdit from "./MemberToEdit";
+import {teamMember} from Form;
 
-function App() {
+
+function App(props) {
+
+const [Team, setTeam] = useState(props.teamMember)
 
  const memberToEdit = event => {
-    setInputValue(event.target.value);
+    setTeam(event.target.value);
 }
   return (
     <div>
-      <form>
-        <input />
-        <input />
-        <input />
-      </form>
-      <MemberToEdit type="text" onChange={} />
+    <h1>Team Members</h1>
+    <div>
+    {teamMember.map((member) => {
+      <TeamMemberCard key={props.name} />
+    })}
+    </div>
+    <Form submit={submit} />
     </div>
   );
 }
