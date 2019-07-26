@@ -1,14 +1,12 @@
 import React from "react";
-import MemberToEdit from './MemberToEdit'
+import Form from "./Form";
 
-function TeamMemberCard(props) => {
-    const teamProps = props.teamMember;
-    return (
-        <div className='member-card'>
-        team members info
-        </div>
-    
-    )
+function TeamMemberCard(props) {
+  return (
+    <div className="member-card">
+      <Form key={props.email} member={props.item} />
+    </div>
+  );
 }
 
 export default TeamMemberCard;

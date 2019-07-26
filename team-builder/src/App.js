@@ -1,25 +1,21 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import TeamMemberCard from "./TeamMemberCard";
-import {teamMember} from Form;
-
+import Form from "./Form";
 
 function App(props) {
+  const [Team, setTeam] = useState(true);
 
-const [Team, setTeam] = useState(props.teamMember)
-
- const memberToEdit = event => {
-    setTeam(event.target.value);
-}
+  // const handleChange = event => {
+  //   setTeam(event.target.value);
+  // };
   return (
-    <div>
-    <h1>Team Members</h1>
-    <div>
-    {teamMember.map((member) => {
-      <TeamMemberCard key={props.name} />
-    })}
-    </div>
-    <Form submit={submit} />
+    <div className="App-header">
+      <h1>Team Members</h1>
+      <div className="App-link">
+        <TeamMemberCard key={Team.id} team={Team} />
+      </div>
+      <Form />
     </div>
   );
 }

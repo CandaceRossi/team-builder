@@ -1,42 +1,45 @@
 import React from "react";
 
-export default function teamMember(props) => {
- return(
-    const teamMember1 = {
-    name: 'Magi',
-    email: 'Magi@gmail.com',
-    role:  'full stack dev'
-    },
+const handleSubmit = event => {
+  event.preventDefault();
+  console.log("submit is subpar", handleSubmit);
+};
+const handleChange = event => {
+  console.log("event is real", handleChange);
+};
 
-    const teamMember2 = {
-    name: 'Bryan',
-    email: 'bryan@gmail.com',
-    role: 'Back End Dev',
-    },
-
-    const teamMember3 = {
-    name: 'Andrea',
-    email: 'andrea@gmail.com',
-    role: 'Front End Dev',
-    },
-
-    const teamMember4 = {
-    name: 'Danette',
-    email: 'danette@yahoo.com',
-    role: 'Computer Science',
-    },
-
-    const teamMember5 = {
-    name: 'Denise',
-    email: 'denise@yahoo.com',
-    role: 'Full Stack Dev',
-    },
-
-    const teamMember6 = {
-    name: 'Rick',
-    email: 'Rick@juon.com',
-    role: 'Full Stack Dev',
-    }
- )
+function Form(event) {
+  return (
+    <div>
+      <form onSubmit={event => handleSubmit(event)}>
+        <label>
+          Name:
+          <input
+            type="text"
+            placeholder="Name"
+            onChange={event => handleChange(event)}
+          />
+        </label>
+        <label>
+          Email:
+          <input
+            type="email"
+            placeholder="Email"
+            onChange={event => handleChange(event)}
+          />
+        </label>
+        <label>
+          Role:
+          <input
+            type="text"
+            placeholder="Role"
+            onChange={event => handleChange(event)}
+          />
+        </label>
+        <button>Edit</button>
+      </form>
+    </div>
+  );
 }
 
+export default Form;
