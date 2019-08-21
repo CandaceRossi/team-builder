@@ -1,4 +1,28 @@
+import React from "react";
 
+const Form = () => {
+
+
+  return(
+    <div className="user-list">
+    <form>
+    <label> 
+    Name:
+    <input type="text"></input>
+    </label>
+  <label> 
+    Email:
+    <input type="email"></input>
+    </label>
+    <label> 
+    Role:
+    <input type="email"></input>
+    </label>
+    </form>
+    </div>
+
+  )
+}
 
 
 
