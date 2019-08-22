@@ -1,79 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 
-const handleChange = event => {
-  console.log(handleChange);
-};
 const Form = props => {
+  const [userInfo, setUserInfo] = useState({
+    name: "",
+    email: "",
+    role: "",
+    body: ""
+  });
+  const handleChange = event => {
+    setUserInfo({ ...userInfo, [event.target.name]: event.target.value });
+  };
+  const handleSubmit = event => {
+    event.preventDefault();
+    console.log(handleSubmit);
+    let newForm = {
+      ...userInfo,
+      id: Date.now()
+    };
+    props.addNewForm(newForm);
+    setUserInfo({ name: "", email: "", role: "", body: "" });
+  };
   return (
     <div className="user-list">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label htmlFor="name" />
-        User Name Name: {props.name}
-        <input type="text" name="name" placeholder="name" value={props.name} />
-        <textarea>hello</textarea>
-        onChange={event => handleChange(event)}
-      </form>
-      <form>
+        Name:
+        <input
+          type="text"
+          name="name"
+          placeholder="name"
+          value={userInfo.name}
+          onChange={handleChange}
+        />
         <label htmlFor="email" />
-        User Email Email: {props.email}
-        <input type="email" placeholder="email" />
-        <textarea>hey</textarea>
-        onChange={event => handleChange(event)}
-      </form>
-      <form>
+        Email:
+        <input
+          type="email"
+          placeholder="email"
+          value={userInfo.email}
+          onChange={handleChange}
+        />
         <label htmlFor="role" />
-        Role: {props.role}
-        <input type="text" placeholder="role" />
-        onChange={event => handleChange(event)}
+        Role:
+        <input
+          type="text"
+          placeholder="role"
+          value={userInfo.role}
+          onChange={handleChange}
+        />
+        <label htmlFor="body" />
+        <textarea
+          name="body"
+          placeholder="Type your note here"
+          value={userInfo.body}
+          onChange={handleChange}
+        >
+          hey
+        </textarea>
       </form>
-      <button>Edit</button>
+      <button type="submit">Edit</button>
     </div>
   );
 };
 
 export default Form;
-// import React from "react";
-
-// const handleSubmit = event => {
-//   event.preventDefault();
-//   console.log("submit is subpar", handleSubmit);
-// };
-// const handleChange = event => {
-//   console.log("event is real", handleChange);
-// };
-
-// function Form(event) {
-//   return (
-//     <div>
-//       <form onSubmit={event => handleSubmit(event)}>
-//         <label>
-//           Name:
-//           <input
-//             type="text"
-//             placeholder="Name"
-//             onChange={event => handleChange(event)}
-//           />
-//         </label>
-//         <label>
-//           Email:
-//           <input
-//             type="email"
-//             placeholder="Email"
-//             onChange={event => handleChange(event)}
-//           />
-//         </label>
-//         <label>
-//           Role:
-//           <input
-//             type="text"
-//             placeholder="Role"
-//             onChange={event => handleChange(event)}
-//           />
-//         </label>
-//         <button>Edit</button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default Form;

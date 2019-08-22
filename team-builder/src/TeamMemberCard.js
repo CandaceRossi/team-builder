@@ -3,14 +3,10 @@ import React from "react";
 const TeamMemberCard = props => {
   return (
     <div className="user-list">
-      {props.userList.map(user => {
-        return (
-          <div className="user" key={user.id}>
-            <h2>{user.name}</h2>
-            <p>{user.role}</p>
-          </div>
-        );
-      })}
+      <div className="user" key={props.id}>
+        <h2>{props.name}</h2>
+        <p>{props.role}</p>
+      </div>
     </div>
   );
 };
