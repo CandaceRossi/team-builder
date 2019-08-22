@@ -1,35 +1,18 @@
-import React, {useState} from "react";
-
+import React, { useState } from "react";
+import data from "./data";
+import Form from "./Form";
 
 function App() {
-  const [users, setUsers] = useState([{}])
-return(
-  <div className="App">
-  <h1>My Form</h1>
-  <Form userList={users}/>
-  
-  </div>
-)
+  const [users, setUsers] = useState(data);
+  return (
+    <div className="App">
+      <h1>User Form</h1>
+      <Form userList={users} />
+    </div>
+  );
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default App;
 
 // import React, { useState } from "react";
 // import "./App.css";
